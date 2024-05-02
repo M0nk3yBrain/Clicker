@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://1kojluhftoi3"]
+
+[ext_resource type="Script" path="res://Scripts/shapes.gd" id="1_o2t6o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dp8sr"]
+size = Vector2(42, 41)
+
+[node name="Square" type="Area2D"]
+script = ExtResource("1_o2t6o")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(0, 0, 0, 40, 40, 40, 40, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(20, 19.5)
+shape = SubResource("RectangleShape2D_dp8sr")

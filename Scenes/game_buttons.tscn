@@ -1,0 +1,44 @@
+[gd_scene load_steps=3 format=3 uid="uid://c7eohfmhigtgc"]
+
+[ext_resource type="Script" path="res://Scripts/game_buttons.gd" id="1_4te25"]
+[ext_resource type="Theme" uid="uid://6vs3n6fp1ib8" path="res://Assets/new_theme.tres" id="2_imqpc"]
+
+[node name="Game Buttons" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4te25")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -132.0
+offset_top = -64.0
+offset_right = 132.0
+grow_horizontal = 2
+grow_vertical = 0
+theme = ExtResource("2_imqpc")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme = ExtResource("2_imqpc")
+
+[node name="Point Up" type="Button" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_imqpc")
+text = "Point + 1"
+
+[node name="Shop" type="Button" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme = ExtResource("2_imqpc")
+text = "Shop"
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Point Up" to="." method="_on_point_up_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/Shop" to="." method="_on_shop_pressed"]
