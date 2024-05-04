@@ -1,6 +1,9 @@
-[gd_scene load_steps=2 format=3 uid="uid://c1ms6sn44gdur"]
+[gd_scene load_steps=3 format=3 uid="uid://c1ms6sn44gdur"]
 
 [ext_resource type="Script" path="res://Scripts/shapes.gd" id="1_53ydp"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_b4mml"]
+font_color = Color(0, 0, 0, 1)
 
 [node name="Triangle" type="Area2D"]
 script = ExtResource("1_53ydp")
@@ -27,3 +30,7 @@ grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(0.89744, 0.816811)
 size_flags_horizontal = 4
+text = "10"
+label_settings = SubResource("LabelSettings_b4mml")
+horizontal_alignment = 1
+vertical_alignment = 1

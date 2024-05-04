@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://1kojluhftoi3"]
+[gd_scene load_steps=4 format=3 uid="uid://1kojluhftoi3"]
 
 [ext_resource type="Script" path="res://Scripts/shapes.gd" id="1_o2t6o"]
+[ext_resource type="LabelSettings" uid="uid://ccok5me60msok" path="res://Assets/new_label_settings.tres" id="2_a7ec4"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dp8sr"]
 size = Vector2(42, 41)
@@ -28,3 +29,6 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 text = "10"
+label_settings = ExtResource("2_a7ec4")
+horizontal_alignment = 1
+vertical_alignment = 1

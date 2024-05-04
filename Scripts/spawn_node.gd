@@ -10,6 +10,8 @@ signal spawn
 var shape1 = preload("res://Scenes/shapes/triangle.tscn")
 var shape2 = preload("res://Scenes/shapes/square.tscn")
 var shape3 = preload("res://Scenes/shapes/octogon.tscn")
+var spawn_count = 0
+
 
 var _shapelist = [shape1, shape2, shape3]
 var _colors = [
@@ -17,6 +19,7 @@ var _colors = [
 	Color(0, 1, 0, 1), # Green
 	Color(1, 0, 0, 1) # Red
 ]
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -32,6 +35,8 @@ func _process(delta):
 func _on_timer_timeout():
 	spawn_shape()
 	emit_signal("spawn")
+	spawn_logic()
+
 
 func spawn_shape():
 	var random_shape = _shapelist[randi() % _shapelist.size()] #Choose a random shape
@@ -41,3 +46,9 @@ func spawn_shape():
 	shape_instance.modulate = random_color # Applies the random color.
 	shape_instance.position = spawn_position # Sets spawn location to instance.
 	add_child(shape_instance)
+
+
+func spawn_logic():
+	spawn_count += 1
+	if spawn_count % 10:
+		pass
