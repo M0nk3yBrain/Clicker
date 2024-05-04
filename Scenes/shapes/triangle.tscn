@@ -5,10 +5,25 @@
 [node name="Triangle" type="Area2D"]
 script = ExtResource("1_53ydp")
 
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(0, 0, -24, 40, 24, 40)
+
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="."]
 position = Vector2(0, -1)
 scale = Vector2(1.0752, 1.05082)
 polygon = PackedVector2Array(0, 0, 24, 40, -24, 40)
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-polygon = PackedVector2Array(0, 0, -24, 40, 24, 40)
+[node name="Label" type="Label" parent="."]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -18.0
+offset_top = 21.0
+offset_right = 22.0
+offset_bottom = 44.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.89744, 0.816811)
+size_flags_horizontal = 4
