@@ -34,3 +34,5 @@ text = "10"
 label_settings = SubResource("LabelSettings_b4mml")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="area_entered" from="." to="." method="_bounce"]
