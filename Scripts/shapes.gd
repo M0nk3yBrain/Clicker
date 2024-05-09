@@ -11,6 +11,7 @@ var side_movement = 0
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	label.text = "%s" % power
+	shape()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -21,3 +22,8 @@ func _process(delta):
 func _bounce(area):
 	if is_in_group("Walls"):
 		side_movement *= -1
+
+
+func shape():
+	pass
+	
