@@ -2,6 +2,7 @@ extends Node2D
 
 
 var points = 0
+var click_power = 1
 
 
 # Called when the node enters the scene tree for the first time.
@@ -10,4 +11,4 @@ func _ready():
 
 
 func _on_game_buttons_points():
-	points += 1
+	points += click_power

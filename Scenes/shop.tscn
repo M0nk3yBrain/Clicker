@@ -30,11 +30,14 @@ offset_bottom = 40.0
 [node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer/NinePatchRect/MarginContainer"]
 layout_mode = 2
 
-[node name="TextureButton" type="TextureButton" parent="VBoxContainer/NinePatchRect/MarginContainer/HBoxContainer"]
+[node name="Plus One" type="Button" parent="VBoxContainer/NinePatchRect/MarginContainer/HBoxContainer"]
 layout_mode = 2
+text = "Click Power + 1"
 
-[node name="TextureButton2" type="TextureButton" parent="VBoxContainer/NinePatchRect/MarginContainer/HBoxContainer"]
+[node name="Plus Two" type="Button" parent="VBoxContainer/NinePatchRect/MarginContainer/HBoxContainer"]
 layout_mode = 2
+text = "Click Power + 2"
 
-[node name="TextureButton3" type="TextureButton" parent="VBoxContainer/NinePatchRect/MarginContainer/HBoxContainer"]
+[node name="Plus Five" type="Button" parent="VBoxContainer/NinePatchRect/MarginContainer/HBoxContainer"]
 layout_mode = 2
+text = "Click Power + 5"

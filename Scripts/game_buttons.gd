@@ -11,7 +11,7 @@ var points_up: int = 1
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	point_up_btn.text = "Point + %s" % points_up
+	point_up_btn.text = "Points + %s" % points_up
 
 
 # List the buttons on game menu.
