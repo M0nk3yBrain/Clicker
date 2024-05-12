@@ -1,13 +1,20 @@
-[gd_scene load_steps=6 format=3 uid="uid://cqku4ryvkgc1c"]
+[gd_scene load_steps=7 format=3 uid="uid://cqku4ryvkgc1c"]
 
 [ext_resource type="Script" path="res://Scripts/game.gd" id="1_ojdbv"]
 [ext_resource type="PackedScene" uid="uid://c7eohfmhigtgc" path="res://Scenes/game_buttons.tscn" id="2_i3nw8"]
+[ext_resource type="PackedScene" uid="uid://2xu3hlsma5lq" path="res://Scenes/shop.tscn" id="2_qxw8e"]
 [ext_resource type="PackedScene" uid="uid://ck2ggc8vef73t" path="res://Scenes/display.tscn" id="3_vtsol"]
 [ext_resource type="PackedScene" uid="uid://0tvw2s7i20w2" path="res://Scenes/barrier.tscn" id="4_c54mp"]
 [ext_resource type="PackedScene" uid="uid://dsd1jfl3n8qi" path="res://Scenes/Logic/spawn_node.tscn" id="5_atumm"]
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_ojdbv")
+
+[node name="Shop" parent="." instance=ExtResource("2_qxw8e")]
+offset_left = 376.0
+offset_top = 584.0
+offset_right = 376.0
+offset_bottom = 584.0
 
 [node name="Game Buttons" parent="." instance=ExtResource("2_i3nw8")]
 offset_left = 352.0
@@ -25,5 +32,6 @@ offset_bottom = 8.0
 
 [node name="Spawn Node" parent="." instance=ExtResource("5_atumm")]
 
+[connection signal="add_point_power" from="Shop" to="." method="_on_shop_add_point_power"]
 [connection signal="points" from="Game Buttons" to="." method="_on_game_buttons_points"]
 [connection signal="points" from="Game Buttons" to="Display" method="_on_game_buttons_points"]

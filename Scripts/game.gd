@@ -12,3 +12,7 @@ func _ready():
 
 func _on_game_buttons_points():
 	points += click_power
+
+
+func _on_shop_add_point_power(power_up):
+	click_power += power_up
