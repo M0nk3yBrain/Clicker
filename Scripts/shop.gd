@@ -9,15 +9,6 @@ signal update_score
 @onready var points = get_parent().points
 
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
-
-
 func cost_check(price, point_up):
 	points = get_parent().points
 	if points > price:
