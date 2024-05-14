@@ -1,6 +1,9 @@
 extends Node2D
 
 
+signal update_button
+
+
 var points = 0
 var click_power = 1
 
@@ -16,3 +19,7 @@ func _on_game_buttons_points():
 
 func _on_shop_add_point_power(power_up):
 	click_power += power_up
+	emit_signal("update_button")
+
+func _on_shop_reduce_points(price):
+	points -= price
