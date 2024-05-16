@@ -3,9 +3,9 @@ extends Node2D
 @onready var label = $Label
 
 
-var speed = randf_range(.1, .5)
-var power = 10
-var side_movement = 0
+@export var speed = randf_range(.1, .5)
+@export var power = 10
+@export var side_movement = 0
 
 
 # Called when the node enters the scene tree for the first time.
