@@ -15,6 +15,7 @@ func _ready():
 
 
 func shop_visibility():
+	#Added hide and shop on button press
 	if shop_screen.is_visible():
 		shop_screen.hide()
 	else:
