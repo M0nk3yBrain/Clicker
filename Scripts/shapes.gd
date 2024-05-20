@@ -3,19 +3,18 @@ extends Node2D
 @onready var label = $Label
 
 
-@export var speed = randf_range(.1, .5)
-@export var power = 10
+var speed = .3
+var power = 10
 @export var side_movement = 0
 
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	label.text = "%s" % power
-	shape()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta):
+func _physics_process(delta):
 	position += Vector2(side_movement, speed)
 
 
@@ -24,6 +23,6 @@ func _bounce(area):
 		side_movement *= -1
 
 
-func shape():
-	pass
-	
+func _on_area_entered(area):
+	if area.is_in_group("Walls"):
+		side_movement *= -1

@@ -7,6 +7,18 @@ signal update_score
 
 
 @onready var points = get_parent().points
+@onready var shop_screen = $"."
+
+
+func _ready():
+	shop_screen.hide()
+
+
+func shop_visibility():
+	if shop_screen.is_visible():
+		shop_screen.hide()
+	else:
+		show()
 
 
 func cost_check(price, point_up):

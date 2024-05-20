@@ -32,3 +32,5 @@ text = "10"
 label_settings = ExtResource("2_a7ec4")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
