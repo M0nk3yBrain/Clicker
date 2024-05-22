@@ -1,7 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://2xu3hlsma5lq"]
+[gd_scene load_steps=6 format=3 uid="uid://2xu3hlsma5lq"]
 
 [ext_resource type="Script" path="res://Scripts/shop.gd" id="1_ol3t7"]
 [ext_resource type="Texture2D" uid="uid://dqssvq6kpjok1" path="res://Assets/UI/blue_panel.png" id="2_114sw"]
+[ext_resource type="Theme" uid="uid://6vs3n6fp1ib8" path="res://Assets/new_theme.tres" id="3_bvea2"]
+
+[sub_resource type="Theme" id="Theme_e8m4y"]
+MarginContainer/constants/margin_bottom = 20
+MarginContainer/constants/margin_left = 10
+MarginContainer/constants/margin_right = 10
+MarginContainer/constants/margin_top = 20
 
 [sub_resource type="Theme" id="Theme_u3lks"]
 MarginContainer/constants/margin_bottom = 20
@@ -26,55 +33,81 @@ size_flags_horizontal = 4
 size_flags_vertical = 4
 script = ExtResource("1_ol3t7")
 
-[node name="MarginContainer" type="MarginContainer" parent="."]
+[node name="Close Container" type="MarginContainer" parent="."]
 layout_mode = 2
-offset_right = 124.0
-offset_bottom = 101.0
+offset_left = 1.0
+offset_top = -79.0
+offset_right = 216.0
+offset_bottom = 21.0
+scale = Vector2(0.75, 0.75)
+size_flags_stretch_ratio = 20.0
 
-[node name="Background" type="TextureRect" parent="MarginContainer"]
+[node name="TextureRect" type="TextureRect" parent="Close Container"]
 layout_mode = 2
 texture = ExtResource("2_114sw")
 
-[node name="MarginContainer" type="MarginContainer" parent="MarginContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="Close Container"]
+layout_mode = 2
+theme = SubResource("Theme_e8m4y")
+
+[node name="Close Shop" type="Button" parent="Close Container/MarginContainer"]
+layout_mode = 2
+theme = ExtResource("3_bvea2")
+text = "Close Shop"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Background" type="TextureRect" parent="VBoxContainer/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("2_114sw")
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/MarginContainer"]
 layout_mode = 2
 theme = SubResource("Theme_u3lks")
 
-[node name="HBoxContainer" type="VBoxContainer" parent="MarginContainer/MarginContainer"]
+[node name="HBoxContainer" type="VBoxContainer" parent="VBoxContainer/MarginContainer/MarginContainer"]
 layout_mode = 2
 alignment = 1
 
-[node name="Plus One" type="Button" parent="MarginContainer/MarginContainer/HBoxContainer"]
+[node name="Plus One" type="Button" parent="VBoxContainer/MarginContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 text = "Click Power + 1"
 
-[node name="Plus Two" type="Button" parent="MarginContainer/MarginContainer/HBoxContainer"]
+[node name="Plus Two" type="Button" parent="VBoxContainer/MarginContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 text = "Click Power + 2"
 
-[node name="Plus Five" type="Button" parent="MarginContainer/MarginContainer/HBoxContainer"]
+[node name="Plus Five" type="Button" parent="VBoxContainer/MarginContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 text = "Click Power + 5"
 
-[node name="Plus Ten" type="Button" parent="MarginContainer/MarginContainer/HBoxContainer"]
+[node name="Plus Ten" type="Button" parent="VBoxContainer/MarginContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 text = "Click Power + 10"
 
-[node name="Plus Twenty" type="Button" parent="MarginContainer/MarginContainer/HBoxContainer"]
+[node name="Plus Twenty" type="Button" parent="VBoxContainer/MarginContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 text = "Click Power + 20"
 
-[node name="Plus Fifty" type="Button" parent="MarginContainer/MarginContainer/HBoxContainer"]
+[node name="Plus Fifty" type="Button" parent="VBoxContainer/MarginContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 text = "Click Power + 50"
 
-[node name="Plus One-Hundred" type="Button" parent="MarginContainer/MarginContainer/HBoxContainer"]
+[node name="Plus One-Hundred" type="Button" parent="VBoxContainer/MarginContainer/MarginContainer/HBoxContainer"]
 layout_mode = 2
 text = "Click Power + 100"
 
-[connection signal="pressed" from="MarginContainer/MarginContainer/HBoxContainer/Plus One" to="." method="_on_plus_one_pressed"]
-[connection signal="pressed" from="MarginContainer/MarginContainer/HBoxContainer/Plus Two" to="." method="_on_plus_two_pressed"]
-[connection signal="pressed" from="MarginContainer/MarginContainer/HBoxContainer/Plus Five" to="." method="_on_plus_five_pressed"]
-[connection signal="pressed" from="MarginContainer/MarginContainer/HBoxContainer/Plus Ten" to="." method="_on_plus_ten_pressed"]
-[connection signal="pressed" from="MarginContainer/MarginContainer/HBoxContainer/Plus Twenty" to="." method="_on_plus_twenty_pressed"]
-[connection signal="pressed" from="MarginContainer/MarginContainer/HBoxContainer/Plus Fifty" to="." method="_on_plus_fifty_pressed"]
-[connection signal="pressed" from="MarginContainer/MarginContainer/HBoxContainer/Plus One-Hundred" to="." method="_on_plus_one_hundred_pressed"]
+[connection signal="pressed" from="Close Container/MarginContainer/Close Shop" to="." method="shop_visibility"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/MarginContainer/HBoxContainer/Plus One" to="." method="_on_plus_one_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/MarginContainer/HBoxContainer/Plus Two" to="." method="_on_plus_two_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/MarginContainer/HBoxContainer/Plus Five" to="." method="_on_plus_five_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/MarginContainer/HBoxContainer/Plus Ten" to="." method="_on_plus_ten_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/MarginContainer/HBoxContainer/Plus Twenty" to="." method="_on_plus_twenty_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/MarginContainer/HBoxContainer/Plus Fifty" to="." method="_on_plus_fifty_pressed"]
+[connection signal="pressed" from="VBoxContainer/MarginContainer/MarginContainer/HBoxContainer/Plus One-Hundred" to="." method="_on_plus_one_hundred_pressed"]

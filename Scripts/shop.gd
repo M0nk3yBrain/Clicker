@@ -17,9 +17,11 @@ func _ready():
 func shop_visibility():
 	#Added hide and shop on button press
 	if shop_screen.is_visible():
+		get_tree().paused = false
 		shop_screen.hide()
 	else:
 		show()
+		get_tree().paused = true
 
 
 func cost_check(price, point_up):

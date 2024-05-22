@@ -1,9 +1,9 @@
 [gd_resource type="Theme" format=3 uid="uid://6vs3n6fp1ib8"]
 
 [resource]
-Button/font_sizes/font_size = 36
+Button/font_sizes/font_size = 30
 HBoxContainer/constants/separation = 80
-MarginContainer/constants/margin_bottom = 10
-MarginContainer/constants/margin_left = 3
-MarginContainer/constants/margin_right = 3
-MarginContainer/constants/margin_top = 3
+MarginContainer/constants/margin_bottom = 20
+MarginContainer/constants/margin_left = 10
+MarginContainer/constants/margin_right = 10
+MarginContainer/constants/margin_top = 20
