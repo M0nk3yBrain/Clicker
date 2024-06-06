@@ -4,6 +4,8 @@ extends Control
 signal add_point_power
 signal reduce_points
 signal update_score
+signal pause
+signal unpause
 
 
 @onready var points = get_parent().points
@@ -17,11 +19,11 @@ func _ready():
 func shop_visibility():
 	#Added hide and shop on button press
 	if shop_screen.is_visible():
-		get_tree().paused = false
+		emit_signal("unpause")
 		shop_screen.hide()
 	else:
 		show()
-		get_tree().paused = true
+		emit_signal("pause")
 
 
 func cost_check(price, point_up):

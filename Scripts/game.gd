@@ -23,3 +23,13 @@ func _on_shop_add_point_power(power_up):
 
 func _on_shop_reduce_points(price):
 	points -= price
+
+
+func _on_shop_pause():
+	pass
+	#get_tree().paused = true
+
+
+func _on_shop_unpause():
+	pass
+	#get_tree().paused = false

@@ -34,7 +34,9 @@ offset_bottom = 8.0
 
 [connection signal="update_button" from="." to="Game Buttons" method="update_click_button"]
 [connection signal="add_point_power" from="Shop" to="." method="_on_shop_add_point_power"]
+[connection signal="pause" from="Shop" to="." method="_on_shop_pause"]
 [connection signal="reduce_points" from="Shop" to="." method="_on_shop_reduce_points"]
+[connection signal="unpause" from="Shop" to="." method="_on_shop_unpause"]
 [connection signal="update_score" from="Shop" to="Display" method="_on_game_buttons_points"]
 [connection signal="points" from="Game Buttons" to="." method="_on_game_buttons_points"]
 [connection signal="points" from="Game Buttons" to="Display" method="_on_game_buttons_points"]
